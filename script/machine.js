@@ -23,10 +23,10 @@ function showOnly(id) {
     const addMoney = document.getElementById('add-money');
     const cashout = document.getElementById('cashout');
     const history = document.getElementById('history');
+    const transfer = document.getElementById('transfer');
+    const payBill = document.getElementById('payBill');
 
-    // const transferMoney = document.getElementById('transfer-money');
     // const getBonus = document.getElementById('get-bonus');
-    // const payBill = document.getElementById('pay-bill');
 
 
 
@@ -36,10 +36,10 @@ function showOnly(id) {
     addMoney.classList.add("hidden");
     cashout.classList.add("hidden");
     history.classList.add("hidden");
+    transfer.classList.add("hidden");
+    payBill.classList.add("hidden");
 
-    // transferMoney.classList.add("hidden");
     // getBonus.classList.add("hidden");
-    // payBill.classList.add("hidden");
 
     const selected = document.getElementById(id);
     selected.classList.remove("hidden")

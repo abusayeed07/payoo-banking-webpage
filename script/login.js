@@ -11,7 +11,7 @@ document.getElementById('login-btn').addEventListener('click', function () {
         document.getElementById('input-number').value = '';
         document.getElementById('input-pin').value = '';
         // to link home page 
-        window.location.assign('/home.html');
+        window.location.assign('home.html');
     } else {
         alert('Login failed');
         return;

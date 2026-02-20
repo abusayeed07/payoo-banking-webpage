@@ -6,10 +6,12 @@ document.getElementById('login-btn').addEventListener('click', function () {
     }
 
     const inputPin = getValueFromInput("input-pin");
-    if (inputNumber == '01234567890' && inputPin == '1234') {
-        alert('Login successfull');
+    if (inputNumber === '01234567890' && inputPin === '1234') {
+        alert('Login successful');
+        document.getElementById('input-number').value = '';
+        document.getElementById('input-pin').value = '';
         // to link home page 
-        window.location.assign('/home.html');
+        window.location.assign('./home.html');
     } else {
         alert('Login failed');
         return;

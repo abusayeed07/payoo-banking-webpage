@@ -3,7 +3,7 @@ document.getElementById("transfer-btn").addEventListener("click", function () {
     if (transferNumber.length !== 11 || isNaN(transferNumber)) {
         alert("Invalid account number");
         return;
-    };
+    }
 
     const transferAmount = getValueFromInput("transfer-amount");
     const currentBalance = getBalance();
@@ -12,10 +12,15 @@ document.getElementById("transfer-btn").addEventListener("click", function () {
         alert("Transfer 500 or more money");
         return;
     }
+    
+    if (newBalance < 0) {
+        alert("Insufficient Balance");
+        return;
+    }
 
     const pin = getValueFromInput("transfer-pin");
     if(pin ==='1234'){
-        alert(`Transfer money from ${currentBalance} at ${new Date()} `);
+        alert(`Transfer money to ${transferNumber} at ${new Date()} `);
         setBalance(newBalance);
 
         // history 
@@ -23,10 +28,15 @@ document.getElementById("transfer-btn").addEventListener("click", function () {
         const newHistory = document.createElement("div");
         newHistory.innerHTML=`
         <div class="transictions-card bg-base-100 p-5">
-Transtfer money successfull ${transferAmount} taka to ${transferNumber} at ${new Date()}
+Transfer money successful ${transferAmount} taka to ${transferNumber} at ${new Date()}
                 </div>
         `;
         history.append(newHistory);
+        
+        // Clear form
+        document.getElementById('transfer-number').value = '';
+        document.getElementById('transfer-amount').value = '';
+        document.getElementById('transfer-pin').value = '';
     }else{
         alert("Invalid pin");
         return;

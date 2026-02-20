@@ -25,8 +25,7 @@ function showOnly(id) {
     const history = document.getElementById('history');
     const transfer = document.getElementById('transfer');
     const payBill = document.getElementById('payBill');
-
-    // const getBonus = document.getElementById('get-bonus');
+    const coupon = document.getElementById('coupon');
 
 
 
@@ -38,8 +37,7 @@ function showOnly(id) {
     history.classList.add("hidden");
     transfer.classList.add("hidden");
     payBill.classList.add("hidden");
-
-    // getBonus.classList.add("hidden");
+    coupon.classList.add("hidden");
 
     const selected = document.getElementById(id);
     selected.classList.remove("hidden")
